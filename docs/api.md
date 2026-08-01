@@ -10,3 +10,4 @@
 | GET | `/api/shopfloor/dashboard` | 会计工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交核验结果 |
 | POST | `/api/shopfloor/agent-preview` | 运行本地财务演示智能体 |
+| POST | `/api/shopfloor/financial-control` | 评估交易异常与内控要求，输出通过、复核或阻断结论 |

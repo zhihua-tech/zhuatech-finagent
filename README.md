@@ -20,6 +20,8 @@
 
 ![FinAgent 总账会计移动任务页](docs/images/finagent-task-h5.png)
 
+交易内控评估支持异常评分、大额交易、跨境属性、附件完整性和人工越权请求的组合判断。系统返回 `PASS`、`REVIEW` 或 `BLOCK`，并列出必须执行的控制措施；任何付款和记账动作仍需经过企业现有审批链。
+
 ## 本地体验
 
 前端采用 Vue 3、Pinia、Vue Router、Axios、Vite；后端采用 Java 21、Spring Boot、Spring Security、JWT、JPA、Flyway；数据库为 MySQL 8，Java 工程包为 `cn.zhuatech.finagent`。
