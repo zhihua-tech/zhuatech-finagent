@@ -43,3 +43,7 @@ cd frontend && npm install && npm run dev:demo
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO 关键词：财务智能体、Finance Agent、智能月结、自动对账、差异分析、财务共享中心源码、Java Vue 财务系统、知华科技。
+
+## 财务关账准备度
+
+新增 `POST /api/finagent/insights/close-readiness`，汇总主体关账、对账、重大调整和待审批任务，输出 `READY`、`REMEDIATE` 或 `BLOCK_CLOSE`。

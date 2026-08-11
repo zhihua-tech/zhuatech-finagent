@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 */
+package cn.zhuatech.finagent;import cn.zhuatech.finagent.service.CloseReadinessService;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.*;
+class CloseReadinessServiceTests{private final CloseReadinessService s=new CloseReadinessService();@Test void blocksIncompleteCloseAtDeadline(){var r=s.evaluate(new CloseReadinessService.Request(10,5,100,50,4,5,1));assertEquals("BLOCK_CLOSE",r.status());}@Test void approvesCompleteClose(){var r=s.evaluate(new CloseReadinessService.Request(10,10,100,100,0,0,3));assertEquals("READY",r.status());}}
