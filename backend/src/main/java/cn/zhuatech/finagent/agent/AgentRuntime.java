@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.finagent.agent;
 import org.springframework.stereotype.Component; import java.util.List; import java.util.Map;
 /** 财务智能体运行边界；社区版只生成建议，不自动记账或支付。 */
