@@ -47,3 +47,7 @@ SEO 关键词：财务智能体、Finance Agent、智能月结、自动对账、
 ## 财务关账准备度
 
 新增 `POST /api/finagent/insights/close-readiness`，汇总主体关账、对账、重大调整和待审批任务，输出 `READY`、`REMEDIATE` 或 `BLOCK_CLOSE`。
+
+## 企业级智能凭证建议发布
+
+新增 `POST /api/enterprise/finagent/journal-proposal-release`，覆盖凭证、期间、借贷、科目主体、职责、税务、重复、审计和冲销，返回 `POST / REVIEW / BLOCKED`。详见 [凭证发布说明](docs/ENTERPRISE_JOURNAL_RELEASE.md)。
