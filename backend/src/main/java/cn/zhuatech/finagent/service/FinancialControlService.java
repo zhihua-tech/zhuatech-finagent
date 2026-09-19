@@ -10,9 +10,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 为财务智能体提供异常交易和凭证完整性控制。 */
+/**
+ * 为财务智能体提供异常交易和凭证完整性控制。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class FinancialControlService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ControlResult evaluate(ControlRequest request) {
         int riskScore = Math.min(100,
             (int) Math.round(request.anomalyScore() * 55)
@@ -30,6 +37,9 @@ public class FinancialControlService {
             "PASS".equals(decision) ? "允许进入自动处理队列" : "提交财务负责人复核");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ControlRequest(
         @NotBlank(message = "请输入交易编号") String transactionNo,
         @Positive double amount,
@@ -39,5 +49,8 @@ public class FinancialControlService {
         boolean overrideRequested
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ControlResult(String decision, int riskScore, List<String> requiredControls, boolean humanReview, String nextAction) {}
 }

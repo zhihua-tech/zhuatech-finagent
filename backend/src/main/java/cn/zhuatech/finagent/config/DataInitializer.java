@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.finagent.config;
 import cn.zhuatech.finagent.model.*; import cn.zhuatech.finagent.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
-@Configuration public class DataInitializer {@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Configuration public class DataInitializer {/**
+                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                              */
+@Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository records,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  OperatingUnit ledger=units.save(new OperatingUnit("FIN-LEDGER","总账与月结组","财务共享中心",5200)),recon=units.save(new OperatingUnit("FIN-RECON","资金与对账组","资金管理中心",4200)),expense=units.save(new OperatingUnit("FIN-EXPENSE","费用审核组","财务运营中心",3000));
  WorkRecord a=records.save(new WorkRecord("CLOSE-2608-014","LEDGER-202608","八月月结勾稽与差异解释",ledger,156,108,4,LocalDate.now().plusDays(1),WorkRecord.Status.RUNNING,"POLICY-2026.6")); WorkRecord b=records.save(new WorkRecord("RECON-2608-027","BANK-ICBC-01","工商银行主账户自动对账",recon,128,128,2,LocalDate.now(),WorkRecord.Status.COMPLETED,"RULESET-V8")); WorkRecord c=records.save(new WorkRecord("EXP-2608-041","COST-MKT-03","市场活动费用合规抽查",expense,94,52,7,LocalDate.now().plusDays(2),WorkRecord.Status.RELEASED,"POLICY-2026.4"));
  resources.saveAll(List.of(new ResourceRegister("DATA-GL-01","总账数据连接",ledger,ResourceRegister.Status.RUNNING,98),new ResourceRegister("DATA-BANK-02","银企回单通道",recon,ResourceRegister.Status.RUNNING,95),new ResourceRegister("RULE-FIN-03","财务政策规则库",expense,ResourceRegister.Status.ALARM,79)));
