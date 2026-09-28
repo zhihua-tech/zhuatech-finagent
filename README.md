@@ -1,5 +1,7 @@
 # 知华 FinAgent｜企业财务智能体工作平台
 
+[简体中文](README.md) | [English](README.en.md)
+
 **社区源码版 / Java + Vue + MySQL / 管理端 + 财务人员 H5 工作台**
 
 [知华科技官网](https://www.zhuatech.cn/)　·　[系统架构](docs/architecture.md)　·　[数据模型](docs/database.md)　·　[API](docs/api.md)
