@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Journal line balancing
+
+Checks journal lines using exact decimal arithmetic, one-sided nonzero amounts and two-decimal precision, returning balance totals without posting any entries. Available to signed-in users with editable inputs, explicit validation and JSON export. See [API, examples and limitations](docs/AI_BUSINESS_UPGRADE_20261023.md). No external model calls or automatic business changes. Existing license and contact details are retained.
+
 # ZhuaTech Finagent
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise finance, planning, settlement, and risk control.
