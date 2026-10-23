@@ -1,0 +1,89 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  },
+  {
+    "patch": {
+      "creditForeign": "100.01"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  },
+  {
+    "patch": {
+      "adjustmentLimit": "0.06"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  },
+  {
+    "patch": {
+      "periodOpen": "NO"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  },
+  {
+    "patch": {
+      "debitForeign": "100",
+      "creditForeign": "100.01"
+    },
+    "expected": {
+      "residualBase": "#-0.07"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  },
+  {
+    "patch": {
+      "debitForeign": "0",
+      "creditForeign": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "residualBase": "#0"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "REVIEW",
+      "debitBase": "#712.42",
+      "residualBase": "#0.07"
+    }
+  }
+]
