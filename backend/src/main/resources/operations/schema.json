@@ -1,0 +1,85 @@
+{
+  "slug": "finagent",
+  "title": "外币凭证折算与尾差门槛",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "debitForeign",
+      "label": "外币借方总额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "creditForeign",
+      "label": "外币贷方总额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "exchangeRate",
+      "label": "本位币/外币汇率",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0.000001",
+      "max": "1000000000000"
+    },
+    {
+      "key": "adjustmentLimit",
+      "label": "尾差调整上限元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "periodOpen",
+      "label": "会计期间开放",
+      "type": "ENUM",
+      "options": [
+        "YES",
+        "NO"
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "key": "debitBase",
+      "label": "本位币借方元"
+    },
+    {
+      "key": "creditBase",
+      "label": "本位币贷方元"
+    },
+    {
+      "key": "residualBase",
+      "label": "折算差额元"
+    }
+  ],
+  "description": "将外币借贷按统一汇率分别折算到本位币分，计算舍入尾差与允许调整限额。只核算，不自动生成或过账调整凭证。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "debitForeign": "100.01",
+        "creditForeign": "100",
+        "exchangeRate": "7.123456",
+        "adjustmentLimit": "0.1",
+        "periodOpen": "YES"
+      }
+    ]
+  }
+}
